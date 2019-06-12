@@ -1,12 +1,13 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role will install httpd (apache) web server using yum module (rpm file will not be pushed from central location but installed using yum command).
+Also, this role can push httpd config file(s).
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+No pre-requisites needed.
 
 Role Variables
 --------------
@@ -30,7 +31,7 @@ Including an example of how to use this role:
 License
 -------
 
-BSD
+GPL
 
 Author Information
 ------------------
