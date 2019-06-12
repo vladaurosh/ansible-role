@@ -1,0 +1,8 @@
+---
+# tasks file for deploy_httpd_app
+- name: copy httpd config file
+  copy:
+    src: app.conf
+    dest: /etc/httpd/conf.d/app.conf
+  notify: 
+      - reload httpd
