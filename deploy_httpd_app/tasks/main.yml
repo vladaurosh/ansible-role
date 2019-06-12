@@ -2,12 +2,14 @@
 # tasks file for deploy_httpd_app
 # this task will install httpd and dependencies if needed (httpd-tools etc.)
 # for rollback (yum downgrade) we need to specify httpd-tools as it is dependency for httpd
+# we set update_cache to yes so yum is forced to check if cache is out of date and redownload if needed.
+# by default allow_downgrade is set to no, for a normal deployment. If we want rollback, we activate this feature for example --extra-vars "rollback=yes"
 - name: install httpd
   yum:
      name: ["httpd","httpd-tools"]
      state: latest
      update_cache: yes
-     allow_downgrade: yes
+     allow_downgrade: "{{ rollback | default('no') }}"
 # this will enable httpd on boot and restart httpd after installation using handlers
   notify:
     - enable httpd
