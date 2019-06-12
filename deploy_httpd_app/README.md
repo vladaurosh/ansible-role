@@ -1,4 +1,4 @@
-Role Name
+Deploy HTTPD 
 =========
 
 This role will install httpd (apache) web server using yum module (rpm file will not be pushed from central location but installed using yum command).
