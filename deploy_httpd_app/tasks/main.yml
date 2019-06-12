@@ -1,5 +1,6 @@
 ---
 # tasks file for deploy_httpd_app
+# this task will install httpd and dependencies if needed (httpd-tools etc.)
 - name: install httpd
   yum:
      name: httpd
