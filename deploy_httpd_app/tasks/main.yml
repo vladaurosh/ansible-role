@@ -6,7 +6,7 @@
 # by default allow_downgrade is set to no, for a normal deployment. If we want rollback, we activate this feature for example --extra-vars "rollback=yes"
 - name: install httpd
   yum:
-     name: ["httpd","httpd-tools"]
+     name: ["httpd{{ rpm_version | default('') }}","httpd-tools{{ rpm_version | default('') }}"]
      state: latest
      update_cache: yes
      allow_downgrade: "{{ rollback | default('no') }}"
