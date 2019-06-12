@@ -21,7 +21,7 @@ This role has 2 optional variables:
 "rpm_version" variable is added to support installation of specific httpd version. If variable is not passed, then latest available httpd version will be installed. If we want to install specific httpd version we should pass for example:
 rpm_version=-2.4.6-88.el7.centos.x86_64
 
-Both variables can be passed when ansible playbook is started for example:              
+Both variables can be passed when ansible playbook is started, for example:              
 --extra-vars "rpm_version=-2.4.6-88.el7.centos.x86_64" --extra-vars "roolback=yes"
 
 Dependencies
