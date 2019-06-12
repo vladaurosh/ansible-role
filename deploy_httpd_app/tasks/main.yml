@@ -10,6 +10,9 @@
      state: latest
      update_cache: yes
      allow_downgrade: "{{ rollback | default('no') }}"
+- copy:
+     src: app.conf
+     dest: /etc/httpd/conf.d/app.conf
 # this will enable httpd on boot and restart httpd after installation using handlers
   notify:
     - enable httpd
