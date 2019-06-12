@@ -12,12 +12,18 @@ No pre-requisites needed.
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+This role has 2 optional variables:
+- rpm_version
+- roolback
+
+"rollback" variable is added to support rpm downgrade (rollback). If variable is not passed, default is no which means downgrade is not allowed.
+"rpm_version" variable is added to support installation of specific httpd version. If variable is not passed, then latest available httpd version will be installed. If we want to install specific httpd version we should pass for example:
+rpm_version=-2.4.6-88.el7.centos.x86_64
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+No dependencies.
 
 Example Playbook
 ----------------
