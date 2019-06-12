@@ -1,5 +1,6 @@
 ---
 # tasks file for deploy_httpd_app
+# this task will copy httpd config file to specific location and if file is changed trigger handler to reload httpd
 - name: copy httpd config file
   copy:
     src: app.conf
