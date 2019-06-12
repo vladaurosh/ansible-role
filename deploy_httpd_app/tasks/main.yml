@@ -6,4 +6,9 @@
   yum:
      name: ["httpd","httpd-tools"]
      state: latest
+     update_cache: yes
      allow_downgrade: yes
+# this will enable httpd on boot and restart httpd after installation using handlers
+  notify:
+    - enable httpd
+    - restart httpd
