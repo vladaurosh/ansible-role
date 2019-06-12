@@ -1,7 +1,9 @@
 ---
 # tasks file for deploy_httpd_app
 # this task will install httpd and dependencies if needed (httpd-tools etc.)
+# for rollback (yum downgrade) we need to specify httpd-tools as it is dependency for httpd
 - name: install httpd
   yum:
-     name: httpd
+     name: ["httpd","httpd-tools"]
      state: latest
+     allow_downgrade: yes
