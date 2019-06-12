@@ -4,6 +4,10 @@
 - name: enable httpd
   service: name=httpd enabled=yes
 
-# this handler will restart httpd after installation (httpd is not started after installation)
-- name: restart httpd
-  service: name=httpd state=restarted
+# this handler will start httpd after installation (httpd is not started after installation)
+- name: start httpd
+  service: name=httpd state=started
+
+# this handler will reload apache (after config file deployment)
+- name: reload httpd
+  service: name=httpd state=reloaded
