@@ -1,2 +1,9 @@
 ---
 # handlers file for deploy_httpd_app
+# this handler will enable httpd on boot (disabled by default)
+- name: enable httpd
+  service: name=httpd enabled=yes
+
+# this handler will restart httpd after installation (httpd is not started after installation)
+- name: restart httpd
+  service: name=httpd state=restarted
